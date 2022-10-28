@@ -7,6 +7,7 @@ package array_implimentation;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
  *
@@ -14,7 +15,7 @@ import java.util.Queue;
  */
 public class stack_room {
 
-    Queue<String> array = new LinkedList<>();
+    Stack array = new Stack ();
    String a,b;
     public stack_room() {
 
@@ -25,12 +26,12 @@ public class stack_room {
     }
 
     void remove() {
-        array.remove();
+        array.pop();
         
     }
 
     void head() {
-        a = array.peek();
+        a = array.peek.toString();
     }
 
     void tail() {
