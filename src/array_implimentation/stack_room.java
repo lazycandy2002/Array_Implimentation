@@ -5,8 +5,6 @@
  */
 package array_implimentation;
 
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -15,31 +13,40 @@ import java.util.Stack;
  */
 public class stack_room {
 
-    Stack array = new Stack ();
-   String a,b;
-    public stack_room() {
+    int head;
+    int tail;
+    int capacity = 10;
+    int[] istack;
+
+    stack_room() {
+        head = -1;
+        tail = -1;
+        istack = new int[capacity];
+    }
+
+    boolean isNull() {
+        return tail <= head;
+    }
+
+    int Enqueue(int data) {
+        return istack[++tail] = data;
 
     }
 
-    void add(String numbers) {
-        array.add(numbers);
+    int Dequeue() {
+        if (isNull()) {
+            System.out.println("Queue is Empty");
+        }
+        if (tail >= head) {
+            return istack[++head];
+
+        }
+        return (Integer) null;
     }
 
-    void remove() {
-        array.pop();
-        
-    }
+    int size() {
+        return tail - head;
 
-    void head() {
-        a = array.peek.toString();
-    }
-
-    void tail() {
-        b = array.poll();
-    }
-
-    void view_stack() {
-        System.out.println(array);
     }
 
 }

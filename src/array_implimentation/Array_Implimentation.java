@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class Array_Implimentation {
 
     public static int a;
-    static stack_room istack = new stack_room();
+    static stack_room Estack = new stack_room();
     static Scanner reply = new Scanner(System.in);
     static Scanner reply_0 = new Scanner(System.in);
     static Scanner reply_1 = new Scanner(System.in);
@@ -28,12 +28,10 @@ public class Array_Implimentation {
 
     public static void start() {
         System.out.println("--------------------------------");
-        istack.view_stack();
+        System.out.println(Estack.isNull());
         System.out.println("--------------------------------");
-        istack.head();
-        istack.tail();
-        System.out.println("Head of the Queue : "+ istack.a);
-        System.out.println("Tail of the Queue : "+ istack.b);
+        System.out.println("Head of the Queue : "+ Estack.Dequeue());
+        System.out.println("Tail of the Queue : "+ Estack.tail);
         System.out.println("");
         System.out.println("");
         System.out.println("Press 1 : add element");
@@ -50,10 +48,9 @@ public class Array_Implimentation {
 
             case 1:
 
-                System.out.println("Enter any Keywords:");
-                String reply_b = reply_0.nextLine();
-                istack.add(reply_b);
-                
+                System.out.println("Enter any Numbers:");
+                int reply_b = reply_0.nextInt();
+                Estack.Enqueue(reply_b);                
                 start();
                 break;
             case 2:
@@ -65,7 +62,7 @@ public class Array_Implimentation {
                 switch (reply_c) {
 
                     case "Y":
-                        istack.remove();
+                        Estack.Dequeue();
                     case "N":
                         start();
                     default:
