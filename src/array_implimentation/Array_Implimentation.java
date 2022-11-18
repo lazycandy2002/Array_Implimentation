@@ -28,14 +28,15 @@ public class Array_Implimentation {
 
     public static void start() {
         System.out.println("--------------------------------");
-        System.out.println(Estack.isNull());
+        Estack.display();
         System.out.println("--------------------------------");
-        System.out.println("Head of the Queue : "+ Estack.Dequeue());
-        System.out.println("Tail of the Queue : "+ Estack.tail);
+        Estack.headandtail();
         System.out.println("");
+        Estack.isfull();
+        Estack.isNull();
         System.out.println("");
-        System.out.println("Press 1 : add element");
-        System.out.println("      2 : remove element");
+        System.out.println("Press 1. Insert Element into the Queue");
+        System.out.println("      2. Delete Element into the Queue");
         System.out.println("");
         filter_1();
 
@@ -67,13 +68,13 @@ public class Array_Implimentation {
                         start();
                     default:
                         System.out.println("INVALID, TRY AGAIN");
-                        start();
+                        filter_1();
                         break;
 
                 }
             default:
                 System.out.println("INVALID, TRY AGAIN");
-                start();
+                filter_1();
                 break;
 
         }

@@ -5,8 +5,6 @@
  */
 package array_implimentation;
 
-import java.util.Stack;
-
 /**
  *
  * @author Jared Gamutin
@@ -16,7 +14,7 @@ public class stack_room {
     int head;
     int tail;
     int capacity = 10;
-    int[] istack;
+    int istack[];
 
     stack_room() {
         head = -1;
@@ -24,29 +22,66 @@ public class stack_room {
         istack = new int[capacity];
     }
 
+    void peek() {
+        if (head == -1 && tail == -1) {
+            System.out.println("There is no element inside the queue to display");
+        } else {
+            System.out.println("The element at the Front Node is : " + istack[head]);
+
+        }
+    }
+
     boolean isNull() {
-        return tail <= head;
+        return head == -1 && tail == -1;
     }
 
-    int Enqueue(int data) {
-        return istack[++tail] = data;
+    boolean isfull() {
+        return tail == capacity - 1;
+    }
+
+    void Enqueue(int data) {
+        if (tail == capacity - 1) {
+            System.out.println("You have reach the maximum limit");
+            return;
+        }
+        if (head == -1 && tail == -1) {
+            head = 0;
+            tail = 0;
+        } else {
+            tail = tail + 1;
+        }
+        istack[tail] = data;
 
     }
 
-    int Dequeue() {
-        if (isNull()) {
+    void Dequeue() {
+        if (head == -1 && tail == -1) {
             System.out.println("Queue is Empty");
-        }
-        if (tail >= head) {
-            return istack[++head];
+            return;
+        } else if (tail == head) {
+            head = tail = -1;
+        } else {
+            head = head + 1;
+        } 
 
-        }
-        return (Integer) null;
     }
+    void headandtail(){
+        if (isNull()){
+            System.out.println("The Head is null");
+            System.out.println("The Tail is null");
+        }else{
+        System.out.println("The Head is "+ istack[head]);
+        System.out.println("The Tail is "+ istack[tail]);
+    }}
 
-    int size() {
-        return tail - head;
-
+    void display() {
+        if (head == -1) {
+            System.out.println("The Queue is Empty");
+        } else {
+            for (int i = head; i <= tail; i++) {
+                System.out.println(" [ " + istack[i] + " ]");
+            }
+        }
     }
 
 }
