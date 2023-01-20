@@ -18,8 +18,7 @@ public class Array_Implimentation {
     static Scanner reply = new Scanner(System.in);
     static Scanner reply_0 = new Scanner(System.in);
     static Scanner reply_1 = new Scanner(System.in);
-    
-    
+
     public static void main(String[] args) {
 
         start();
@@ -30,10 +29,10 @@ public class Array_Implimentation {
         System.out.println("--------------------------------");
         Estack.display();
         System.out.println("--------------------------------");
-        Estack.headandtail();
         System.out.println("");
         Estack.isfull();
         Estack.isNull();
+        Estack.headandtail();
         System.out.println("");
         System.out.println("Press 1. Insert Element into the Queue");
         System.out.println("      2. Delete Element into the Queue");
@@ -51,7 +50,7 @@ public class Array_Implimentation {
 
                 System.out.println("Enter any Numbers:");
                 int reply_b = reply_0.nextInt();
-                Estack.Enqueue(reply_b);                
+                Estack.Enqueue(reply_b);
                 start();
                 break;
             case 2:
@@ -79,6 +78,4 @@ public class Array_Implimentation {
 
         }
     }
-    }
-    
-
+}
